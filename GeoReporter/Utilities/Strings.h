@@ -14,6 +14,7 @@
 extern NSInteger const kTab_Home;
 extern NSInteger const kTab_Report;
 extern NSInteger const kTab_Archive;
+extern NSInteger const kTab_Profile;
 extern NSInteger const kTab_Servers;
 
 // Keys to the Localized String file
@@ -23,6 +24,7 @@ extern NSString * const kUI_HelpText;
 extern NSString * const kUI_Settings;
 extern NSString * const kUI_Report;
 extern NSString * const kUI_Archive;
+extern NSString * const kUI_Profile;
 extern NSString * const kUI_About;
 extern NSString * const kUI_AboutText;
 extern NSString * const kUI_TitleHome;

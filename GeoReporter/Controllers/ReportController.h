@@ -30,6 +30,7 @@
 @property NSDictionary *service;
 @property (strong, nonatomic) IBOutlet UILabel *personalInfoLabel;
 @property Report *report;
+@property (strong, nonatomic) IBOutlet UIImageView *reportImage;
 - (IBAction)done:(id)sender;
 - (IBAction)share:(id)sender;
 - (void)postSucceeded;

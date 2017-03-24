@@ -75,12 +75,14 @@
 		8B2E447317729AA6004E8D35 /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B2E447117729AA4004E8D35 /* currentLocation.png */; };
 		8B2E447417729AA6004E8D35 /* currentLocation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B2E447217729AA5004E8D35 /* currentLocation@2x.png */; };
 		8B358C371C84F21700027970 /* respondbanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B358C361C84F21700027970 /* respondbanner.png */; };
-		8B358C3C1C84F31000027970 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B358C3B1C84F31000027970 /* MainStoryboard.storyboard */; };
 		8B37AB681E43DB38004307F4 /* RespondLaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AB651E43DB38004307F4 /* RespondLaunchImage-568h@2x.png */; };
 		8B37AB691E43DB38004307F4 /* RespondLaunchImage-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AB661E43DB38004307F4 /* RespondLaunchImage-667h@2x.png */; };
 		8B37AB6A1E43DB38004307F4 /* RespondLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B37AB671E43DB38004307F4 /* RespondLaunchImage@2x.png */; };
 		8B39483E1773CDAC00FE2AD9 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B39483D1773CDAC00FE2AD9 /* icon@2x.png */; };
 		8B43416417C69D86004A8F37 /* DateTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B43416317C69D86004A8F37 /* DateTimeController.m */; };
+		8B4767531E71A58100005E48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4767521E71A58100005E48 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		8B4767551E71AA3200005E48 /* Home-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4767541E71AA3200005E48 /* Home-100.png */; settings = {ASSET_TAGS = (); }; };
+		8B4767561E73570200005E48 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4767581E73570200005E48 /* MainStoryboard.storyboard */; };
 		8B5F7340177A282500411E18 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B5F733F177A282500411E18 /* MessageUI.framework */; };
 		8B80C4011778BC3000D335D4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3948391773CD7600FE2AD9 /* icon.png */; };
 		8B80C42C1778BD6500D335D4 /* 114X114-Respond.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B80C4071778BD6500D335D4 /* 114X114-Respond.png */; };
@@ -234,7 +236,6 @@
 		8B2E447117729AA4004E8D35 /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		8B2E447217729AA5004E8D35 /* currentLocation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currentLocation@2x.png"; sourceTree = "<group>"; };
 		8B358C361C84F21700027970 /* respondbanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = respondbanner.png; sourceTree = "<group>"; };
-		8B358C3B1C84F31000027970 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8B37AB651E43DB38004307F4 /* RespondLaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RespondLaunchImage-568h@2x.png"; path = "GeoReporter/Images/RespondLaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		8B37AB661E43DB38004307F4 /* RespondLaunchImage-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RespondLaunchImage-667h@2x.png"; path = "GeoReporter/Images/RespondLaunchImage-667h@2x.png"; sourceTree = "<group>"; };
 		8B37AB671E43DB38004307F4 /* RespondLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RespondLaunchImage@2x.png"; path = "GeoReporter/Images/RespondLaunchImage@2x.png"; sourceTree = "<group>"; };
@@ -242,6 +243,10 @@
 		8B39483D1773CDAC00FE2AD9 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
 		8B43416217C69D86004A8F37 /* DateTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeController.h; sourceTree = "<group>"; };
 		8B43416317C69D86004A8F37 /* DateTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeController.m; sourceTree = "<group>"; };
+		8B4767521E71A58100005E48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RESPOND/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		8B4767541E71AA3200005E48 /* Home-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-100.png"; sourceTree = "<group>"; };
+		8B4767571E73570200005E48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		8B4767591E73573400005E48 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8B5F733F177A282500411E18 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8B740F0217DF8F6B0023A53F /* DateValueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateValueDelegate.h; sourceTree = "<group>"; };
 		8B80C4071778BD6500D335D4 /* 114X114-Respond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "114X114-Respond.png"; sourceTree = "<group>"; };
@@ -460,11 +465,12 @@
 				8B37AB651E43DB38004307F4 /* RespondLaunchImage-568h@2x.png */,
 				8B37AB661E43DB38004307F4 /* RespondLaunchImage-667h@2x.png */,
 				8B37AB671E43DB38004307F4 /* RespondLaunchImage@2x.png */,
-				8B358C3B1C84F31000027970 /* MainStoryboard.storyboard */,
+				8B4767581E73570200005E48 /* MainStoryboard.storyboard */,
 				8B358C361C84F21700027970 /* respondbanner.png */,
 				8BEBF3C81C0CED0E000C2D91 /* ROC-IconRespond_120x120.png */,
 				8BC169811784C72A00B29F3D /* ROC-IconRespond_114x114.png */,
 				8BC1697F1784C72100B29F3D /* ROC-IconRespond_57x57.png */,
+				8B4767521E71A58100005E48 /* Images.xcassets */,
 				8B5F733F177A282500411E18 /* MessageUI.framework */,
 				8B80C4061778BD6500D335D4 /* Images */,
 				69ED14E716B2EE4C00232245 /* RESPOND */,
@@ -555,6 +561,7 @@
 		8B80C4061778BD6500D335D4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8B4767541E71AA3200005E48 /* Home-100.png */,
 				8B80C41B1778BD6500D335D4 /* respondbanner.png */,
 				8B80C41C1778BD6500D335D4 /* respondbanner@2x.png */,
 				8B80C4071778BD6500D335D4 /* 114X114-Respond.png */,
@@ -683,10 +690,12 @@
 				69B2465216D5450B00C47475 /* megaphone.png in Resources */,
 				69B2465316D5450B00C47475 /* megaphone@2x.png in Resources */,
 				69B2465816D552C100C47475 /* chatTableCell.png in Resources */,
+				8B4767551E71AA3200005E48 /* Home-100.png in Resources */,
 				69B2465916D552C100C47475 /* chatTableCell@2x.png in Resources */,
 				69B2465A16D552C100C47475 /* listTableCell.png in Resources */,
 				69B2465B16D552C100C47475 /* listTableCell@2x.png in Resources */,
 				69FE9E6A16D67E99007021B9 /* accountTableCell.png in Resources */,
+				8B4767531E71A58100005E48 /* Images.xcassets in Resources */,
 				69FE9E6B16D67E99007021B9 /* accountTableCell@2x.png in Resources */,
 				8BC1EB681770F69B00640A24 /* AvailableServers.plist in Resources */,
 				8B2E445C1771E9C2004E8D35 /* respondbanner.png in Resources */,
@@ -706,7 +715,7 @@
 				8B358C371C84F21700027970 /* respondbanner.png in Resources */,
 				8B37AB691E43DB38004307F4 /* RespondLaunchImage-667h@2x.png in Resources */,
 				8B80C4321778BD6500D335D4 /* chatTableCell@2x.png in Resources */,
-				8B358C3C1C84F31000027970 /* MainStoryboard.storyboard in Resources */,
+				8B4767561E73570200005E48 /* MainStoryboard.storyboard in Resources */,
 				8B80C43F1778BD6500D335D4 /* respondbanner.png in Resources */,
 				8B80C4401778BD6500D335D4 /* respondbanner@2x.png in Resources */,
 				8B80C4411778BD6500D335D4 /* cross-hairs-small-black-cropped.png in Resources */,
@@ -842,6 +851,15 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		8B4767581E73570200005E48 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B4767571E73570200005E48 /* en */,
+				8B4767591E73573400005E48 /* es */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -906,12 +924,14 @@
 		69ED151716B2EE4D00232245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoReporter/Supporting Files/RESPOND-Prefix.pch";
 				INFOPLIST_FILE = "GeoReporter/Supporting Files/RESPOND-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRIVATE_HEADERS_FOLDER_PATH = RESPOND.app/PrivateHeaders;
 				PRODUCT_NAME = RESPONDPR;
 				PROVISIONING_PROFILE = "";
@@ -925,12 +945,14 @@
 		69ED151816B2EE4D00232245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoReporter/Supporting Files/RESPOND-Prefix.pch";
 				INFOPLIST_FILE = "GeoReporter/Supporting Files/RESPOND-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRIVATE_HEADERS_FOLDER_PATH = RESPOND.app/PrivateHeaders;
 				PRODUCT_NAME = RESPONDPR;
 				PROVISIONING_PROFILE = "";

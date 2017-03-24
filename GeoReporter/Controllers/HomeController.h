@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 - (void)serviceListReady;
+
 - (void)accountListReady;
 - (void)startBusyIcon;
 - (void)refreshPersonalInfo;

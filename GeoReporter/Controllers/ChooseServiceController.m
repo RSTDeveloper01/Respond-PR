@@ -15,7 +15,7 @@
 #import "Open311.h"
 #import "Strings.h"
 #import "ReportController.h"
-
+#import "Report2Controller.h"
 @interface ChooseServiceController ()
 
 @end
@@ -197,7 +197,7 @@ static NSString * const kSegueToReport  = @"SegueToReport";
         }
     }
     selectedService= services[[[self.tableView indexPathForSelectedRow]row]] ;
-    ReportController *report = [segue destinationViewController];
+    Report2Controller *report = [segue destinationViewController];
     report.service = selectedService;
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
 }

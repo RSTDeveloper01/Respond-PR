@@ -5,6 +5,7 @@
 "menu_settings"="Mi Info";
 "menu_report"="Nuevo Reporte";
 "menu_archive"="Mis Reportes";
+"menu_profile" = "Perfil";
 "menu_about"="Acerca";
 "anonymous"="Anónimo";
 "personal_info"="Mi Info.";

@@ -37,6 +37,8 @@ static NSString * const kSegueToServices = @"SegueToChooseServiceFromAccount";
 {
     [super viewDidLoad];
     self.reportLabel     .text = NSLocalizedString(kUI_Report,  nil);
+
+    
     self.archiveLabel    .text = NSLocalizedString(kUI_Archive, nil);
     self.reportingAsLabel.text = NSLocalizedString(kUI_ReportingAs, nil);
     self.currentLocationLabel.text = NSLocalizedString(kUI_CurrentLocation, nil);
@@ -49,10 +51,12 @@ static NSString * const kSegueToServices = @"SegueToChooseServiceFromAccount";
     [[self.tabBarController.tabBar.items objectAtIndex:kTab_Home]  setTitle:NSLocalizedString(kUI_TitleHome,  nil)];
     [[self.tabBarController.tabBar.items objectAtIndex:kTab_Report]  setTitle:NSLocalizedString(kUI_Report,  nil)];
     [[self.tabBarController.tabBar.items objectAtIndex:kTab_Archive] setTitle:NSLocalizedString(kUI_Archive, nil)];
-   
+   [[self.tabBarController.tabBar.items objectAtIndex:kTab_Profile] setTitle:NSLocalizedString(kUI_Profile, nil)];
     
     self.tabBarController.delegate = self;
  
+    //removes the extra separators from the tableview
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 
@@ -155,12 +159,18 @@ static NSString * const kSegueToServices = @"SegueToChooseServiceFromAccount";
 #pragma mark - Table Handler Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0 && indexPath.row == 2) {
         
-        CGSize size = [self.personalInfoLabel.text sizeWithFont:self.personalInfoLabel.font
-                                              constrainedToSize:CGSizeMake(300, 140)
-                                                  lineBreakMode:self.personalInfoLabel.lineBreakMode];
-        NSInteger height = size.height + 28;
+        
+        CGRect textRect = [self.personalInfoLabel.text boundingRectWithSize:CGSizeMake(300, 140)
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:@{NSFontAttributeName:self.personalInfoLabel.font}
+                                             context:nil];
+        
+        CGSize size = textRect.size;
+        
+        
+        NSInteger height = size.height + 35;
         return (CGFloat)height;
     }
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
@@ -184,6 +194,9 @@ static NSString * const kSegueToServices = @"SegueToChooseServiceFromAccount";
         }
         if (indexPath.row == 1) {
             [self.tabBarController setSelectedIndex:kTab_Archive];
+        }
+        if(indexPath.row == 2){
+             [self performSegueWithIdentifier:kSegueToSettings sender:self];
         }
     }
     if (indexPath.section == 1 && indexPath.row==0) {
@@ -265,7 +278,8 @@ static NSString * const kSegueToServices = @"SegueToChooseServiceFromAccount";
     
     [popupQuery setCancelButtonIndex:(popupQuery.numberOfButtons-1)];
     
-    popupQuery.actionSheetStyle=UIActionSheetStyleBlackOpaque;
+    popupQuery.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
+    popupQuery.tintColor = [UIColor colorWithRed:0.09 green:0.65 blue:0.74 alpha:1.0];
 
     [popupQuery showFromTabBar:self.tabBarController.tabBar];
     

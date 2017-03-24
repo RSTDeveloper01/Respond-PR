@@ -45,6 +45,7 @@ UIView *headerView;
 @synthesize report=_report;
 
 static NSString * const kReportCell      = @"report_cell";
+static NSString * const kReportImageCell = @"report_image_cell";
 static NSString * const kFieldname       = @"fieldname";
 static NSString * const kLabel           = @"label";
 static NSString * const kType            = @"type";
@@ -93,28 +94,38 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
     // First section: Photo and Location choosers
     fields = [[NSMutableArray alloc] init];
 
+    NSMutableArray *tblRows = [[NSMutableArray alloc] init];
     if([[[_service objectForKey:krst_Service_Category] stringValue] isEqualToString:rst_Service_Category_Service])
     {
       //  header = [NSString stringWithFormat:@"%@ - %@", _service[kOpen311_ServiceName],_service[kOpen311_Description]];
 
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES
         && [[[Preferences sharedInstance] getCurrentServer][kOpen311_SupportsMedia] boolValue]) {
-           [fields addObject:@[@{kFieldname:kOpen311_Media, kLabel:NSLocalizedString(kUI_AddPhoto, nil), kType:kOpen311_Media },@{kFieldname:kOpen311_Address, kLabel:NSLocalizedString(kUI_Location, nil), kType:kOpen311_Address}
-             ]];
+            [tblRows addObject:@{kFieldname:kOpen311_Media, kLabel:NSLocalizedString(kUI_AddPhoto, nil) ,kType:kOpen311_Media }];
+             [tblRows addObject:@{kFieldname:kOpen311_Address, kLabel:NSLocalizedString(kUI_Location, nil), kType:kOpen311_Address}];
+            
+//            [fields addObject:@[@{kFieldname:kOpen311_Media, kLabel:NSLocalizedString(kUI_AddPhoto, nil), kType:kOpen311_Media },@{kFieldname:kOpen311_Address, kLabel:NSLocalizedString(kUI_Location, nil), kType:kOpen311_Address}
+//             ]];
 
             // Initialize the Asset Library object for saving/reading images
             library = [[ALAssetsLibrary alloc] init];
         }
         else {
-            [fields addObject:@[
-            @{kFieldname:kOpen311_Address, kLabel:NSLocalizedString(kUI_Location, nil), kType:kOpen311_Address}
-            ]];
+            [tblRows addObject:@{kFieldname:kOpen311_Media, kLabel:NSLocalizedString(kUI_AddPhoto, nil), kType:kOpen311_Media }];
+             [tblRows addObject:@{kFieldname:kOpen311_Address, kLabel:NSLocalizedString(kUI_Location, nil), kType:kOpen311_Address}];
+            
+//            [fields addObject:@[
+//                                @{kFieldname:kOpen311_Media, kLabel:NSLocalizedString(kUI_AddPhoto, nil), kType:kOpen311_Media },
+//            @{kFieldname:kOpen311_Address, kLabel:NSLocalizedString(kUI_Location, nil), kType:kOpen311_Address}
+//            ]];
+            
+            
         }
 
         // Second section: Report Description
-        [fields addObject:@[
+        [tblRows addObject:
         @{kFieldname:kOpen311_Description, kLabel:NSLocalizedString(kUI_ReportDescription, nil), kType:kOpen311_Text}
-        ]];
+        ];
 
         // Third section: Attributes
         // Attributes with variable=false will be appended to the section header
@@ -140,12 +151,15 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
                
            
             }
-            [fields addObject:attributes];
+            if (attributes.count > 0) {
+                [tblRows addObject:attributes];
+            }
+            
         }
         //Fourth section:Personal Info
         NSMutableArray *personalInfo = [[NSMutableArray alloc]init];
-        [personalInfo addObject:@{kFieldname:@"personal_info", kLabel:NSLocalizedString(kUI_ReportingAs, nil), kType:   kOpen311_UserInfo}];
-        [fields addObject:personalInfo];
+        [tblRows addObject:@{kFieldname:@"personal_info", kLabel:NSLocalizedString(kUI_ReportingAs, nil), kType:   kOpen311_UserInfo}];
+        [fields addObject:tblRows];
         }
     }
      [[self tableView]reloadData];
@@ -321,7 +335,7 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
         title.textColor = [UIColor blackColor];
         title.shadowColor = [UIColor whiteColor];
         title.shadowOffset= CGSizeMake(0.0,1.0);
-        title.font=[UIFont boldSystemFontOfSize:16];
+        title.font=[UIFont systemFontOfSize:14];
         if([[[_service objectForKey:krst_Service_Category] stringValue] isEqualToString:rst_Service_Category_Service]){
             title.text= self.service[kOpen311_ServiceName];
         }
@@ -363,10 +377,28 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
     return nil;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 0){
+        return 100;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    UITableViewCell *cell;
+   
+    
+    if (indexPath.row == 0) {
+        
+         cell = [tableView dequeueReusableCellWithIdentifier:kReportImageCell];
+        
+    }
+    else{
     //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReportCell forIndexPath:indexPath];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReportCell];
+    cell = [tableView dequeueReusableCellWithIdentifier:kReportCell];
     cell.detailTextLabel.text = @"";
     
     NSDictionary *field = fields[indexPath.section][indexPath.row];
@@ -394,6 +426,10 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
             if (mediaThumbnail != nil) {
             [cell.imageView setImage:mediaThumbnail];
             }
+        }
+        else{
+            UIImage *img = [UIImage imageNamed:@"camera"];
+            [cell.imageView setImage:img];
         }
     }
     // Location cell
@@ -425,7 +461,7 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
         text = NSLocalizedString(kUI_Anonymous,  nil);
         }
         cell.detailTextLabel.text = text;
-        [cell.imageView  setImage:[UIImage imageNamed:@"accountTableCell"]];
+        [cell.imageView  setImage:[UIImage imageNamed:@"h_profile"]];
     }
     else{
         NSString *datatype  = field[kType];
@@ -471,6 +507,7 @@ static NSString * const kSegueToSettings        = @"SegueToSettings";
             cell.detailTextLabel.text = userInput;
         }
         
+    }
     }
 
     return cell;

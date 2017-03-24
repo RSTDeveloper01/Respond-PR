@@ -14,7 +14,7 @@
 NSInteger const kTab_Home    = 0;
 NSInteger const kTab_Report  = 1;
 NSInteger const kTab_Archive = 2;
-
+NSInteger const kTab_Profile = 3;
 
 // Keys to the Localized String file
 NSString * const kUI_AppTitle               = @"app_title";
@@ -23,6 +23,8 @@ NSString * const kUI_HelpText               = @"help_text";
 NSString * const kUI_Settings               = @"menu_settings";
 NSString * const kUI_Report                 = @"menu_report";
 NSString * const kUI_Archive                = @"menu_archive";
+
+NSString * const kUI_Profile               = @"menu_profile";
 NSString * const kUI_About                  = @"menu_about";
 NSString * const kUI_AboutText              = @"about_text";
 NSString * const kUI_TitleHome              = @"title_home";
