@@ -28,7 +28,7 @@
                                                      MultiValueDelegate,
                                                     MFMailComposeViewControllerDelegate>
 @property NSDictionary *service;
-@property (strong, nonatomic) IBOutlet UILabel *personalInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *personalInfoLabel;
 @property Report *report;
 @property (strong, nonatomic) IBOutlet UIImageView *reportImage;
 - (IBAction)done:(id)sender;

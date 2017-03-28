@@ -3,26 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[Open311 refreshLocation]:Open311.m">
+         contextName = "-[HomeController locationUpdated]:HomeController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[CLLocationManager authorizationStatus]">
+               value = "userDefaults">
             </PersistentString>
             <PersistentString
-               value = "kCLAuthorizationStatusNotDetermined">
+               value = "open311.gpsCity">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[HomeController tableView:heightForRowAtIndexPath:]:HomeController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-            <PersistentString
-               value = "self.personalInfoLabel">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[LocationController locationManager:didFailWithError:]:LocationController.m">
       </ContextState>
       <ContextState
          contextName = "-[ReportController load]:ReportController.m">
@@ -72,6 +64,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ReportController tableView:cellForRowAtIndexPath:]:ReportController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[ReportController tableView:heightForHeaderInSection:]:ReportController.m">
          <PersistentStrings>
             <PersistentString
@@ -86,21 +81,40 @@
          contextName = "-[ReportController tableView:numberOfRowsInSection:]:ReportController.m">
       </ContextState>
       <ContextState
-         contextName = "-[ReportController numberOfSectionsInTableView:]:ReportController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[HomeController locationUpdated]:HomeController.m">
+         contextName = "-[ReportController tableView:heightForRowAtIndexPath:]:ReportController.m">
          <PersistentStrings>
             <PersistentString
-               value = "userDefaults">
+               value = "self.personalInfoLabel.text">
             </PersistentString>
             <PersistentString
-               value = "open311.gpsCity">
+               value = "cell.detailTextLabel.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[LocationController locationManager:didFailWithError:]:LocationController.m">
+         contextName = "-[ReportController numberOfSectionsInTableView:]:ReportController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Open311 refreshLocation]:Open311.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[CLLocationManager authorizationStatus]">
+            </PersistentString>
+            <PersistentString
+               value = "kCLAuthorizationStatusNotDetermined">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeController tableView:heightForRowAtIndexPath:]:HomeController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "self.personalInfoLabel">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
